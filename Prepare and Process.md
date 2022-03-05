@@ -1,0 +1,46 @@
+# Preparing and Processing the Divvy Trip Data
+I downloaded and unzipped the following files from [Divvy Bike's trip data](https://divvy-tripdata.s3.amazonaws.com/index.html):
+* 202101-divvy-tripdata
+* 202102-divvy-tripdata
+* 202103-divvy-tripdata
+* 202104-divvy-tripdata
+* 202105-divvy-tripdata
+* 202111-divvy-tripdata
+* 202112-divvy-tripdata
+
+I did download the data for the missing months June - October, but the data was too large to work with in BigQuery. Therefore I only used the files listed above.
+
+To start, I previewed the .csv's in Microsoft Excel. The data for each month was too large to easily manipulate in Excel, so I uploaded each sheet to BigQuery under a dataset I named "divvy_bike_share". Once I uploaded the tables, I previewed each table's schema. Each 2021 table has the same scheme, so I did not need to rename or join any tables.
+
+Given that each table had the same schema, I combined all tables into one inclusive table. I also made the following modifications to the table's structure:
+* I seperated out the `started_at` and `ended_at` columns to be individual date and time columns.
+* I combined the latitude and longitude columns. (I did this because geo latitude and longitude data in Data Studio is combined and not separated.)
+
+```sql
+SELECT *,
+  CAST (started_at AS date) AS start_date,
+  CAST (started_at AS time) AS start_time,
+  CAST (ended_at AS date) AS end_date,
+  CAST (ended_at AS time) AS end_time,
+  CAST (ended_at AS time) AS end_time,
+  CONCAT(start_lat, ", ", start_lng) AS start_map,
+  CONCAT(end_lat, ", ", end_lng) AS end_map
+FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_01`
+        UNION ALL
+        SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_02` 
+        UNION ALL
+        SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_03`
+        UNION ALL
+        SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_04`
+        UNION ALL
+        SELECT * FROM `project.divvy_bike_share.divvy_trips_05`
+        UNION ALL
+        SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_11`
+        UNION ALL
+        SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_12`
+```
+*Note that this is the final version of all changes made. In reality, I made several amendments and tried creating more condensed tables with certain information,
+such as a table that only contains trip location information. While this was a good exercise in writing queries, I did not end up using these smaller tables in my
+final analysis. *
+
+From here, I was able to query all of the data to pull answers to questions such as 'How many rideable types are there?' and '
