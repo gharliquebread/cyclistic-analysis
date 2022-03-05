@@ -45,6 +45,15 @@ FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_01`
 such as a table that only contains trip location information. While this was a good exercise in writing queries, I did not end up using these smaller tables in my
 final analysis. *
 
+Station names contained many null values, so I wrote a query to determine if missing names had a non-null `station_id` that could be used to fill in the blanks for missing data. After running the code below, however, all station names with null values also had null station IDs.
+```sql
+SELECT 
+    DISTINCT(start_station_id),
+    start_station_name
+    
+     FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_11` 
+    WHERE start_station_name is null
+``` 
 From here, I was able to query all of the data to pull answers to questions such as 'How many rideable types are there?' and count null values.
 
 ```sql
