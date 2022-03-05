@@ -16,9 +16,11 @@ Given that each table had the same schema, I combined all tables into one inclus
 * I seperated out the `started_at` and `ended_at` columns to be individual date and time columns. --> New column `start_time`, `start_date`, `end_time`, `end_date`
 * I combined the latitude and longitude columns. (I did this because geo latitude and longitude data in Data Studio is combined and not separated.) --> New column `start_map` and `end_map`
 * Probably most importantly, I created a trip duration column by subtracting `start_time` from `end_time`. --> New column `trip_duration`
+* I considered removing some extranneous columns, but ended up leaving each column in since I learned I would not be able to donwload the data as a .csv anyways, because it was still too big, even with columns removed.
 
 ```sql
-SELECT *,
+SELECT
+  *,
   CAST (started_at AS date) AS start_date,
   CAST (started_at AS time) AS start_time,
   CAST (ended_at AS date) AS end_date,
@@ -118,29 +120,5 @@ What I was unable to accomplish that would have strengthened the analysis:
 *   Ex. Total count of member trips by rideable type AND total count of casual trips by rideable type.
 *   When I attempted to write these queries, the error code "Scalar subquery produced more than one element" was returned.
 *   See Additional SQL code for my attempts at creating these kinds of tables.
-```sql
-SELECT 
-    EXTRACT(MONTH FROM start_date) AS month,
-    AVG(trip_duration) AS avg_trip_duration,
-    (
-        SELECT
-            AVG(trip_duration)
-        FROM `project.divvy_bike_share.divvy_2021_all`
-        WHERE 
-            member_casual = "member"
-        GROUP BY 
-            month
-    ) AS avg_member_trip,
-    (
-        SELECT
-            AVG(trip_duration)
-        FROM `project.divvy_bike_share.divvy_2021_all`
-        WHERE 
-            member_casual = "casual"
-    ) AS avg_casual_trip
-FROM `project.divvy_bike_share.divvy_2021_all`
-GROUP BY 
-    month
-ORDER BY 
-    month
+
 ```
