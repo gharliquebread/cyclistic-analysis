@@ -10,7 +10,7 @@ View the Data Studio presentation and visuals **[here](https://datastudio.google
  * Ride frequency increases at a greater rate in the summer months than member rides increase. *
 
 * *Further analysis needed to include data on summer months.*
-* 
+
 **Bike Type**
 * Use docked bikes for 14.14% of rides
 
