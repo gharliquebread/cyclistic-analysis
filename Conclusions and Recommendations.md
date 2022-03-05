@@ -4,7 +4,9 @@ View the Data Studio presentation and visuals **[here](https://datastudio.google
 **Casual riders differ from member riders in the following ways:**
 
 **Trip Duration + Time**
-- Longer trips
+* Longer trips
+ * Average casual rider trip duration: 0:13:17.130500621
+ * Average member rider trip duration: 0:34:8.299136219
 - Ride frequency increases at a greater rate in the summer months than member rides increase *
 
 **Bike Type**
