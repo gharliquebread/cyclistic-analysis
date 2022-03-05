@@ -13,8 +13,9 @@ I did download the data for the missing months June - October, but the data was 
 To start, I previewed the .csv's in Microsoft Excel. The data for each month was too large to easily manipulate in Excel, so I uploaded each sheet to BigQuery under a dataset I named "divvy_bike_share". Once I uploaded the tables, I previewed each table's schema. Each 2021 table has the same scheme, so I did not need to rename or join any tables.
 
 Given that each table had the same schema, I combined all tables into one inclusive table. I also made the following modifications to the table's structure:
-* I seperated out the `started_at` and `ended_at` columns to be individual date and time columns.
-* I combined the latitude and longitude columns. (I did this because geo latitude and longitude data in Data Studio is combined and not separated.)
+* I seperated out the `started_at` and `ended_at` columns to be individual date and time columns. --> New column `start_time`, `start_date`, `end_time`, `end_date`
+* I combined the latitude and longitude columns. (I did this because geo latitude and longitude data in Data Studio is combined and not separated.) --> New column `start_map` and `end_map`
+* Probably most importantly, I created a trip duration column by subtracting `start_time` from `end_time`. --> New column `trip_duration`
 
 ```sql
 SELECT *,
@@ -24,7 +25,8 @@ SELECT *,
   CAST (ended_at AS time) AS end_time,
   CAST (ended_at AS time) AS end_time,
   CONCAT(start_lat, ", ", start_lng) AS start_map,
-  CONCAT(end_lat, ", ", end_lng) AS end_map
+  CONCAT(end_lat, ", ", end_lng) AS end_map,
+  (end_time - start_time) AS trip_duration
 FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_01`
         UNION ALL
         SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_02` 
@@ -43,4 +45,93 @@ FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_01`
 such as a table that only contains trip location information. While this was a good exercise in writing queries, I did not end up using these smaller tables in my
 final analysis. *
 
-From here, I was able to query all of the data to pull answers to questions such as 'How many rideable types are there?' and '
+From here, I was able to query all of the data to pull answers to questions such as 'How many rideable types are there?' and count null values.
+
+```sql
+SELECT
+   DISTINCT(rideable_type)
+
+FROM `project.divvy_bike_share.divvy_2021_all`
+```
+```sql
+SELECT
+   DISTINCT(member_casual)
+
+FROM `project.divvy_bike_share.divvy_2021_all`
+```
+```sql
+SELECT
+   DISTINCT(start_station_name)
+
+FROM `project.divvy_bike_share.divvy_2021_all`
+```
+And so on.
+
+## Creating Average Trip Duration Tables for Data Studio
+I created my visualizations in Data Studio and to include visualizations reflecting average trip durations of members vs casual riders, I ended up creating two additional tables that calculated the average trip duration by month:
+
+**Casual Average Trip Duration by Month**
+```sql
+SELECT
+   EXTRACT( month FROM start_date) AS trip_month,
+    AVG(trip_duration) AS avg_trip_duration
+
+FROM `project.divvy_bike_share.divvy_2021_all`
+
+WHERE
+    member_casual = "casual"
+GROUP BY 
+    trip_month
+
+ORDER BY 
+    trip_month
+```
+**Member Average Trip Duration by Month**
+```sql
+SELECT
+   EXTRACT( month FROM start_date) AS trip_month,
+    AVG(trip_duration) AS avg_trip_duration
+
+FROM `project.divvy_bike_share.divvy_2021_all`
+
+WHERE
+    member_casual = "member"
+GROUP BY 
+    trip_month
+
+ORDER BY 
+    trip_month
+```
+## Processing the Data - Road Bumps
+What I was unable to accomplish that would have strengthened the analysis:
+* Reflect on which day of the week the ride occurred.
+* Write queries that reflect calculations filtered by metric.
+*   Ex. Total count of member trips by rideable type AND total count of casual trips by rideable type.
+*   When I attempted to write these queries, the error code "Scalar subquery produced more than one element" was returned.
+*   See Additional SQL code for my attempts at creating these kinds of tables.
+```sql
+SELECT 
+    EXTRACT(MONTH FROM start_date) AS month,
+    AVG(trip_duration) AS avg_trip_duration,
+    (
+        SELECT
+            AVG(trip_duration)
+        FROM `project.divvy_bike_share.divvy_2021_all`
+        WHERE 
+            member_casual = "member"
+        GROUP BY 
+            month
+    ) AS avg_member_trip,
+    (
+        SELECT
+            AVG(trip_duration)
+        FROM `level-harbor-337222.divvy_bike_share.divvy_2021_all`
+        WHERE 
+            member_casual = "casual"
+    ) AS avg_casual_trip
+FROM `level-harbor-337222.divvy_bike_share.divvy_2021_all`
+GROUP BY 
+    month
+ORDER BY 
+    month
+```
