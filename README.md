@@ -23,28 +23,6 @@ In a future project, I would like to reanalyze the data in RStudio - using the d
 # Preparing, Processing, and Analyzing the Data
 To see my process and SQL code, navigate to the other files of this project.
 
-# Conclusions and Recommendations
-Casual riders differ from member riders in the following ways:
+In addition to the issues of RStudio Cloud crashing when I uploaded the data, I decided to use BigQuery SQL because the tables were structered the same way. I determined that the questions I wanted to ask involved relatively simple calcuations and that much of my analysis would come from seeing the data plotted visually. Therefore, I chose SQL because I could easily combine and clean the data and run queries to return high-level data to inform my visualizations.
 
-**Trip Duration + Time**
-- Longer trips
-- Ride frequency increases at a greater rate in the summer months than member rides increase *
-
-**Bike Type**
-- Use docked bikes for 14.14% of rides
-
-**Trip Location**
-- Strong preference for the station at Streeter Dr & Grand Ave, accounting for 75.96% of casual rides
-- The most popular stations also had the highest percentage of docked bike usage
-   
-   
-## Recommendations + Next Steps:
-- Determine incentive for annual memberships and docked bikes.
-- Collect data on why members take shorter trips and casual riders take shorter trips.
-- Collect data on where riders live.
-        For example, do tourists make up a large portion of casual riders? 
-        Are there shorter membership options that would appeal to tourists withou an annual commitment?)
-- Determine if certain days of the week are more popular among casual riders vs members.
-        For example, if weekends are significantly more popular for casual riders, consider offering a weekend-oriented membership plan.
-- Consider analysing where docked bikes are located and on average how many of each type of bike is located at each station.
-- Analyze whether casual riders are more likely than members to ride in summer months.
+Further, BigQuery allowed me to connect my data to Data Studio to create visualizations. My data was too large to download and then reupload to Tableau, but in a future project, I would like to use Tableau to reflect the data because I ran into some limitations with Data Studio, such as my column `trip_duration` not tranferring over because it is an interval data type.
