@@ -75,6 +75,35 @@ WHERE
 # Failed SQL Code
 This section contains some queries that I tried but failed to solve in the end.
 
+**Erros: Scalar query returned more than one element - Nesting and Trying to Pull Data Showing Calcuations Across Rows and Columns**
+This was probably the most upsetting failure to me. I hope to find the solution for pulling tables that show calcuations grouped by columns/rows.
+```sql
+SELECT 
+    EXTRACT(MONTH FROM start_date) AS month,
+    AVG(trip_duration) AS avg_trip_duration,
+    (
+        SELECT
+            AVG(trip_duration)
+        FROM `project.divvy_bike_share.divvy_2021_all`
+        WHERE 
+            member_casual = "member"
+        GROUP BY 
+            month
+    ) AS avg_member_trip,
+    (
+        SELECT
+            AVG(trip_duration)
+        FROM `project.divvy_bike_share.divvy_2021_all`
+        WHERE 
+            member_casual = "casual"
+    ) AS avg_casual_trip
+FROM `project.divvy_bike_share.divvy_2021_all`
+GROUP BY 
+    month
+ORDER BY 
+    month
+```
+
 **Are there any trips where the start and end stations were the same?**
 
 ```sql
