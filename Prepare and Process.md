@@ -125,11 +125,11 @@ SELECT
     (
         SELECT
             AVG(trip_duration)
-        FROM `level-harbor-337222.divvy_bike_share.divvy_2021_all`
+        FROM `project.divvy_bike_share.divvy_2021_all`
         WHERE 
             member_casual = "casual"
     ) AS avg_casual_trip
-FROM `level-harbor-337222.divvy_bike_share.divvy_2021_all`
+FROM `project.divvy_bike_share.divvy_2021_all`
 GROUP BY 
     month
 ORDER BY 
