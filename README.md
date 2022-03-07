@@ -36,6 +36,7 @@ I created a series of visualizations in Google Data Studio, which you can view a
 If you have a Data Studio account, you can view the live report [here](https://datastudio.google.com/reporting/448956ec-d113-4b1b-816f-09b418c1f2fa/page/IVInC).
 
 To review my final analysis and recommendations, navigate to the other files of this project:
+* [Data Studio Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Data%20Studio%20Analysis.md)
 * [Conclusions and Recommendations](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Conclusions%20and%20Recommendations.md)
 
 ## Wrap-Up
