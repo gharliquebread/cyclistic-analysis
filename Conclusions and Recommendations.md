@@ -1,5 +1,5 @@
 # Conclusions and Recommendations
-View the Data Studio presentation and visuals **[here](https://datastudio.google.com/s/iSTJ4fIguTw).**
+View the Data Studio presentation and visuals as a PDF **[here](https://github.com/gharliquebread/cyclistic-analysis/files/8201316/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study.1.pdf)** or on Data Studio with an account **[here](https://datastudio.google.com/s/iSTJ4fIguTw).**
 
 **Casual riders differ from member riders in the following ways:**
 
@@ -29,3 +29,7 @@ View the Data Studio presentation and visuals **[here](https://datastudio.google
         For example, if weekends are significantly more popular for casual riders, consider offering a weekend-oriented membership plan.
 * Consider analysing where docked bikes are located and on average how many of each type of bike is located at each station.
 * Analyze whether casual riders are more likely than members to ride in summer months.
+
+**Next:** [Additional SQL Code](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Additional%20SQL%20Code.md)
+
+**Previous** [Data Studio Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Data%20Studio%20Analysis.md)
