@@ -29,6 +29,7 @@ SELECT
   CONCAT(start_lat, ", ", start_lng) AS start_map,
   CONCAT(end_lat, ", ", end_lng) AS end_map,
   (end_time - start_time) AS trip_duration
+
 FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_01`
         UNION ALL
         SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_02` 
@@ -53,8 +54,9 @@ SELECT
     DISTINCT(start_station_id),
     start_station_name
     
-     FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_11` 
-    WHERE start_station_name is null
+FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_11` 
+
+WHERE start_station_name is null
 ``` 
 From here, I was able to query all of the data to pull answers to questions such as 'How many rideable types are there?' and count null values.
 
@@ -121,4 +123,6 @@ What I was unable to accomplish that would have strengthened the analysis:
 *   When I attempted to write these queries, the error code "Scalar subquery produced more than one element" was returned.
 *   See Additional SQL code for my attempts at creating these kinds of tables.
 
-```
+**Next:** [Data Studio Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Data%20Studio%20Analysis.md)
+
+**Previous** [README/Overview](https://github.com/gharliquebread/cyclistic-analysis/blob/main/README.md)
