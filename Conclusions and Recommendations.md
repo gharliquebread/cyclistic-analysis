@@ -21,7 +21,7 @@ View the Data Studio presentation and visuals **[here](https://datastudio.google
    
 ## Recommendations + Next Steps:
 * Determine incentive for annual memberships and docked bikes.
-* Collect data on why members take shorter trips and casual riders take shorter trips.
+* Collect data on why members take shorter trips and casual riders take longer trips.
 * Collect data on where riders live.
         For example, do tourists make up a large portion of casual riders? 
         Are there shorter membership options that would appeal to tourists withou an annual commitment?)
