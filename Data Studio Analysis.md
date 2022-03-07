@@ -1,10 +1,14 @@
-# Creating Visualizatoins and Conducting Further Analysis - Data Studio
+# Creating Visualizations and Conducting Further Analysis - Data Studio
 I exported my data from BigQuery to Data Studio. I was able to further explore my data by creating various charts, which allowed me to quickly identify trends.
 
 The attached PDF includes the final version of my visualizations, accompanied with conclusions:
-[Cyclistic_Bike_Share_Analysis__Capstone_Case_Study.pdf](https://github.com/gharliquebread/cyclistic-analysis/files/8191517/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study.pdf)
+[Cyclistic Bike Share Capstone - Data Studio](https://github.com/gharliquebread/cyclistic-analysis/files/8191517/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study.pdf)
 
 The report does not include notes on my data or modifications, which I have instead tracked in this project.
+
+**Next:** [Conclusions and Recommendations](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Conclusions%20and%20Recommendations.md)
+
+**Previous** [SQL Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/SQL%20Analysis.md)
 
 ## Notes on Data Studio
 
