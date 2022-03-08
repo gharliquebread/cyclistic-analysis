@@ -1,5 +1,5 @@
 # Analyzing the Data - SQL
-With the data cleaned and explored, it was ready for analysis. I write a variety of queries to explore identify trends.
+With the data cleaned and explored, it was ready for analysis. I wrote a variety of queries to explore identify trends.
 
 ## Question: Is there a difference in trip duration?
 
@@ -120,3 +120,8 @@ WHERE
 
 GROUP BY 
     member_casual
+```
+
+**Next:** [Data Studio Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Data%20Studio%20Analysis.md)
+
+**Previous:** [Prepare and Process](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Prepare%20and%20Process.md)
