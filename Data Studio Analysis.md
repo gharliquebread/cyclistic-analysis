@@ -2,9 +2,9 @@
 I exported my data from BigQuery to Data Studio. I was able to further explore my data by creating various charts, which allowed me to quickly identify trends.
 
 The attached PDF includes the final version of my visualizations, accompanied with conclusions:
-[Cyclistic Bike Share Capstone - Data Studio](https://github.com/gharliquebread/cyclistic-analysis/files/8191517/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study.pdf)
+[Cyclistic Bike Share Capstone - Data Studio](https://github.com/gharliquebread/cyclistic-analysis/files/8209943/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study_Daphne.Letherer.pdf)
 
-The report does not include notes on my data or modifications, which I have instead tracked in this project.
+If you have a Data Studio account, you can view the live report [here](https://datastudio.google.com/reporting/448956ec-d113-4b1b-816f-09b418c1f2fa).
 
 **Next:** [Conclusions and Recommendations](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Conclusions%20and%20Recommendations.md)
 
@@ -25,12 +25,20 @@ My final charts did not include filters because I could not find a clean way to 
 or Tableau.
 
 ## Cyclistic Bike Share Analysis: Capstone Case Study Data Studio Report
-<img width="912" alt="01  Overview" src="https://user-images.githubusercontent.com/100979159/156901018-4cc655aa-a69c-4159-be10-3fd8aad84c06.PNG">
-<img width="908" alt="02  Ride Frequency" src="https://user-images.githubusercontent.com/100979159/156901025-5e7d46e5-9d47-4c83-a1fb-dee164ed6f3b.PNG">
-<img width="913" alt="03  Ride Frequncy - Further Questions" src="https://user-images.githubusercontent.com/100979159/156901029-b402f611-5842-4ee5-9169-cb283fea7ada.PNG">
-<img width="905" alt="04  Ride Duration" src="https://user-images.githubusercontent.com/100979159/156901030-9ead9758-0aa4-4c04-8c87-37e30d0b8669.PNG">
-<img width="913" alt="05  Ride Type" src="https://user-images.githubusercontent.com/100979159/156901031-c1cd6ad8-2ef1-418c-9f6b-724a331c14ce.PNG">
-<img width="910" alt="06  Station Preference" src="https://user-images.githubusercontent.com/100979159/156901061-95c4cfad-40b8-4cfe-9dfa-c0cba242d615.PNG">
-<img width="906" alt="07  Station Preference Cont" src="https://user-images.githubusercontent.com/100979159/156901062-883c79e3-e0c4-463e-893c-6f09cb126840.PNG">
-<img width="911" alt="07  Station Preference + Rideable Type" src="https://user-images.githubusercontent.com/100979159/156901033-69e44aed-c23e-4648-b3de-1193215de86d.PNG">
-<img width="914" alt="08  Ride Frequency + Rideable Type" src="https://user-images.githubusercontent.com/100979159/156901034-8ed6a4f1-d8dd-414d-91bb-e6ed4832f8fe.PNG">
+![01  Overview](https://user-images.githubusercontent.com/100979159/157334628-c1b9fcb5-724a-4de0-9036-6f14f27f93fe.png)
+![02  Data Processing](https://user-images.githubusercontent.com/100979159/157334630-56978c02-3e8d-4c98-8474-9711f8d36b77.png)
+![03  Ride Frequency](https://user-images.githubusercontent.com/100979159/157334634-305f88d4-4b70-4faa-97da-1ce1853e9476.png)
+![04  Ride Frequency Cont](https://user-images.githubusercontent.com/100979159/157334635-50b4b25e-195f-4cee-abab-5c12df8bc5e7.png)
+![05  Ride Duration](https://user-images.githubusercontent.com/100979159/157334637-24ab9867-dd58-4c79-8101-07525d5a1fd2.png)
+![06  Ride Type](https://user-images.githubusercontent.com/100979159/157334638-11d1c4e6-23ec-439c-99c0-7e1e3b0f7945.png)
+![07  Station Preference](https://user-images.githubusercontent.com/100979159/157334639-6c0aff12-ee33-4176-b42c-a2654126fa5c.png)
+![08  Station Preference Cont](https://user-images.githubusercontent.com/100979159/157334640-668b042b-d4fa-4f19-8979-5b5aa78216f3.png)
+![09  Station Preference + Rideable Type](https://user-images.githubusercontent.com/100979159/157334642-f82c76cd-d87a-42b1-8468-172607eb9e0b.png)
+![10  Ride Frequency + Rideable Type](https://user-images.githubusercontent.com/100979159/157334644-6415be57-aa7e-48ba-93ea-eeb5ccb2753b.png)
+![11  Conclusions](https://user-images.githubusercontent.com/100979159/157334645-77fe132c-0b85-4aeb-840e-b3ecff9b9248.png)
+![12  Notes on the Data](https://user-images.githubusercontent.com/100979159/157334648-662cab4d-25a8-4ce1-a6a5-abc940918393.png)
+
+**Next:** [Conclusions and Recommendations](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Conclusions%20and%20Recommendations.md)
+
+**Previous** [SQL Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/SQL%20Analysis.md)
+
