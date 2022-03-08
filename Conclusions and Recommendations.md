@@ -1,18 +1,19 @@
 # Conclusions and Recommendations
-View the Data Studio presentation and visuals as a PDF **[here](https://github.com/gharliquebread/cyclistic-analysis/files/8201316/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study.1.pdf)** or on Data Studio with an account **[here](https://datastudio.google.com/s/iSTJ4fIguTw).**
+View the Data Studio presentation and visuals as a PDF **[here](https://github.com/gharliquebread/cyclistic-analysis/files/8209943/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study_Daphne.Letherer.pdf)** or on Data Studio with an account **[here](https://datastudio.google.com/reporting/448956ec-d113-4b1b-816f-09b418c1f2fa).**
 
 **Casual riders differ from member riders in the following ways:**
 
 **Trip Duration + Time**
-* Longer trips
- * Average casual rider trip duration: 0:13:17.130500621
- * Average member rider trip duration: 0:34:8.299136219
- * Ride frequency increases at a greater rate in the summer months than member rides increase. *
+* Casual riders take longer trips
+* Average casual rider trip duration: 0:13:17.130500621
+* Average member rider trip duration: 0:34:8.299136219
+* Ride frequency increases at a greater rate in the summer months than member rides increase. *
 
-* *Further analysis needed to include data on summer months.*
+*Further analysis needed to include data on summer months.* 
 
 **Bike Type**
-* Use docked bikes for 14.14% of rides
+* Causal riders use docked bikes for 14.14% of rides
+* Member riders prefer classic bikes over electric
 
 **Trip Location**
 * Strong preference for the station at Streeter Dr & Grand Ave, accounting for 75.96% of casual rides
