@@ -32,7 +32,6 @@ Further, BigQuery allowed me to connect my data to Data Studio to create visuali
 
 ## Visualizations and Final Analysis
 I created a series of visualizations in Google Data Studio, which you can view as a PDF [here](https://github.com/gharliquebread/cyclistic-analysis/files/8209943/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study_Daphne.Letherer.pdf).
-).
 
 If you have a Data Studio account, you can view the live report [here](https://datastudio.google.com/reporting/448956ec-d113-4b1b-816f-09b418c1f2fa).
 
