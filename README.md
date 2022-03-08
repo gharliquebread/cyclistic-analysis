@@ -31,9 +31,10 @@ In addition to the issues of RStudio Cloud crashing when I uploaded the data, I 
 Further, BigQuery allowed me to connect my data to Data Studio to create visualizations. My data was too large to download and then reupload to Tableau, but in a future project, I would like to use Tableau to reflect the data because I ran into some limitations with Data Studio, such as my column `trip_duration` not tranferring over because it is an interval data type.
 
 ## Visualizations and Final Analysis
-I created a series of visualizations in Google Data Studio, which you can view as a PDF [here](https://github.com/gharliquebread/cyclistic-analysis/files/8200927/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study.1.pdf).
+I created a series of visualizations in Google Data Studio, which you can view as a PDF [here](https://github.com/gharliquebread/cyclistic-analysis/files/8209943/Cyclistic_Bike_Share_Analysis__Capstone_Case_Study_Daphne.Letherer.pdf).
+).
 
-If you have a Data Studio account, you can view the live report [here](https://datastudio.google.com/reporting/448956ec-d113-4b1b-816f-09b418c1f2fa/page/IVInC).
+If you have a Data Studio account, you can view the live report [here](https://datastudio.google.com/reporting/448956ec-d113-4b1b-816f-09b418c1f2fa).
 
 To review my final analysis and recommendations, navigate to the other files of this project:
 * [Data Studio Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Data%20Studio%20Analysis.md)
