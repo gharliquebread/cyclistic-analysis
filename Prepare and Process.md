@@ -12,6 +12,7 @@ I did download the data for the missing months June - October, but the data was 
 
 To start, I previewed the .csv's in Microsoft Excel. The data for each month was too large to easily manipulate in Excel, so I uploaded each sheet to BigQuery under a dataset I named "divvy_bike_share". Once I uploaded the tables, I previewed each table's schema. Each 2021 table has the same scheme, so I did not need to rename or join any tables.
 
+## Modifying Columns ##
 Given that each table had the same schema, I combined all tables into one inclusive table. I also made the following modifications to the table's structure:
 * I seperated out the `started_at` and `ended_at` columns to be individual date and time columns. --> New column `start_time`, `start_date`, `end_time`, `end_date`
 * I combined the latitude and longitude columns. (I did this because geo latitude and longitude data in Data Studio is combined and not separated.) --> New column `start_map` and `end_map`
@@ -30,7 +31,7 @@ SELECT
   CONCAT(end_lat, ", ", end_lng) AS end_map,
   (end_time - start_time) AS trip_duration
 
-FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_01`
+FROM `project.divvy_bike_share.divvy_trips_2021_01`
         UNION ALL
         SELECT * FROM `project.divvy_bike_share.divvy_trips_2021_02` 
         UNION ALL
@@ -51,12 +52,16 @@ final analysis. *
 ## Cleaning: Looking for Null Values ##
 To find which columns contained null values, I ran the following query, changing the column in the `WHERE` statement.
 ```sql
-SELECT 
-    COUNT(ride_id)
-FROM `project.divvy_bike_share.divvy_2021_all`
+SELECT
+    start_station_id,
+    start_station_name
+    
+FROM `project.divvy_bike_share.divvy_trips_2021_11` 
 
 WHERE 
     start_station_name is null
+    AND 
+    start_station_id is not null
 ```
 
 Station names contained many null values, so I wrote a query to determine if missing names had a non-null `station_id` that could be used to fill in the blanks for missing data. After running the code below, however, all station names with null values also had null station IDs.
