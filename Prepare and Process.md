@@ -82,8 +82,9 @@ FROM `project.divvy_bike_share.divvy_2021_all`
 WHERE 
     end_station_name is null OR start_station_name is null
 ```
-I found that 337,661 rides contained a null value in either the start or end station names. I then calculated what percentage of rides contained null values to include in my review of the data and cleaning notes.
-```sqlSELECT 
+I found that 337,661 rides contained a null value in either the start or end station names. I then calculated what percentage of rides contained null values to include in my review of the data and cleaning notes. My query returned that over 18.23% of rides contained a null value.
+```sql
+SELECT 
     CONCAT((337661/ COUNT(ride_id)) * 100, "%")
 FROM `project.divvy_bike_share.divvy_2021_all`
 ```
@@ -154,6 +155,6 @@ What I was unable to accomplish that would have strengthened the analysis:
 *   When I attempted to write these queries, the error code "Scalar subquery produced more than one element" was returned.
 *   See Additional SQL code for my attempts at creating these kinds of tables.
 
-**Next:** [Data Studio Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/Data%20Studio%20Analysis.md)
+**Next:** [SQL Analysis](https://github.com/gharliquebread/cyclistic-analysis/blob/main/SQL%20Analysis.md)
 
 **Previous** [README/Overview](https://github.com/gharliquebread/cyclistic-analysis/blob/main/README.md)
