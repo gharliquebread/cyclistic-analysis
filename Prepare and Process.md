@@ -48,6 +48,17 @@ FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_01`
 such as a table that only contains trip location information. While this was a good exercise in writing queries, I did not end up using these smaller tables in my
 final analysis. *
 
+## Cleaning: Looking for Null Values ##
+To find which columns contained null values, I ran the following query, changing the column in the `WHERE` statement.
+```sql
+SELECT 
+    COUNT(ride_id)
+FROM `project.divvy_bike_share.divvy_2021_all`
+
+WHERE 
+    start_station_name is null
+```
+
 Station names contained many null values, so I wrote a query to determine if missing names had a non-null `station_id` that could be used to fill in the blanks for missing data. After running the code below, however, all station names with null values also had null station IDs.
 ```sql
 SELECT 
@@ -58,7 +69,22 @@ FROM `level-harbor-337222.divvy_bike_share.divvy_trips_2021_11`
 
 WHERE start_station_name is null
 ``` 
-From here, I was able to query all of the data to pull answers to questions such as 'How many rideable types are there?' and count null values.
+Finding that the missing data could not be filled, I counted how many rides contained null station names.
+```sql
+SELECT 
+    COUNT(ride_id)
+FROM `project.divvy_bike_share.divvy_2021_all`
+WHERE 
+    end_station_name is null OR start_station_name is null
+```
+I found that 337,661 rides contained a null value in either the start or end station names. I then calculated what percentage of rides contained null values to include in my review of the data and cleaning notes.
+```sqlSELECT 
+    CONCAT((337661/ COUNT(ride_id)) * 100, "%")
+FROM `project.divvy_bike_share.divvy_2021_all`
+```
+
+## Determinng Variables ##
+From here, I was able to query all of the data to pull answers to questions such as 'How many rideable types are there?'
 
 ```sql
 SELECT
